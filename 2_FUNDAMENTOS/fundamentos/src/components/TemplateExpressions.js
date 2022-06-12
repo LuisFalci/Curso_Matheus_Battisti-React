@@ -11,6 +11,7 @@ const TemplateExpressions = () =>{
             <p>Trabalho como {data.job}</p>
             <p>{4+4}</p>
             <p>{console.log(data)}</p>
+            
         </div>
     )
 } 
