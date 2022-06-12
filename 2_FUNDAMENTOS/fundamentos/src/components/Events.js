@@ -5,6 +5,16 @@ const Events = () => {
         console.log(e)
         console.log("Ativou o evento")
     }
+
+    const rederSomething = (x) => {
+        if(x){
+            return <h1>Renderiza isso</h1>
+        }else{
+            return <h1>Renderiza o do else</h1>
+                
+            
+        }
+    }
     return(
         <div>
             <div>
@@ -22,6 +32,8 @@ const Events = () => {
             Clique aqui
             </button>
             </div>
+            {rederSomething(true)}
+            {rederSomething(false)}
         </div>
     )
 }
