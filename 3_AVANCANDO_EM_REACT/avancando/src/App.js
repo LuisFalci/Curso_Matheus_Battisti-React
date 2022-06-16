@@ -7,6 +7,7 @@ import ShowUserName from './components/ShowUserName';
 import { useState } from 'react';
 import CarDetails from './components/CarDetails';
 import Container from './components/Container';
+import ExecuteFunction from './components/ExecuteFunction';
 
 function App() {
   const name = "Gabriel";
@@ -14,8 +15,12 @@ function App() {
   const cars = [
     {id: 1, brand: "Ferrari", color: "Amarela", newCar: true, km: 0},
     {id: 2, brand: "Ferrari", color: "Branco", newCar: false, km: 2323},
-    {id: 2, brand: "Ferrari", color: "Amarela", newCar: false, km: 4444},
-  ]
+    {id: 3, brand: "Ferrari", color: "Amarela", newCar: false, km: 4444},
+  ];
+
+  function showMessage() {
+    console.log("Evento do componente pai");
+  }
 
   return (
     <div className="App">
@@ -34,12 +39,19 @@ function App() {
       {/* loop em array de objetos */}
 
       {cars.map((car) => (
-        <CarDetails brand={car.brand} color={car.color} km={car.km} newCar={car.newCar} />
+        <CarDetails 
+        key={car.id}
+        brand={car.brand} 
+        color={car.color} 
+        km={car.km} newCar={car.newCar} />
       ))}
 
       <Container myValue="5">
         <p>Conteudo filho de container</p>
       </Container>
+
+      {/* Executar Função */}
+      <ExecuteFunction myFunction={showMessage}/>
     </div>
 
   );
