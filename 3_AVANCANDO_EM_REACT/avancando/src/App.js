@@ -6,6 +6,7 @@ import ConditionalRender from './components/ConditionalRender';
 import ShowUserName from './components/ShowUserName';
 import { useState } from 'react';
 import CarDetails from './components/CarDetails';
+import Container from './components/Container';
 
 function App() {
   const name = "Gabriel";
@@ -35,6 +36,10 @@ function App() {
       {cars.map((car) => (
         <CarDetails brand={car.brand} color={car.color} km={car.km} newCar={car.newCar} />
       ))}
+
+      <Container myValue="5">
+        <p>Conteudo filho de container</p>
+      </Container>
     </div>
 
   );
