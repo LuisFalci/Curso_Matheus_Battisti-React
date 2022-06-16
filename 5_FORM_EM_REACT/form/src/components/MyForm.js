@@ -25,7 +25,11 @@ const MyForm = () =>  {
            {/* 2 - label envolvendo input*/}
            <label>
             <span>Email:</span>
-           <input type="email" name="email" placeholder="Digite seu email"/>
+           <input 
+           type="email" 
+           name="email" placeholder="Digite seu email"
+           onChange={(e) => setEmail(e.target.value)}
+           />
            </label>
            <input type="submit" value="Enviar"/>
         </form>
