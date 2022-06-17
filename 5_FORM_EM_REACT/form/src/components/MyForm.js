@@ -14,6 +14,10 @@ const MyForm = ({user}) =>  {
         // preventDefault cancela a ação. Neste caso ela irá impedir o envio do formulário (recarregar a página)
         event.preventDefault();
         console.log("Enviando formulario");
+
+        // 7 - limpar form
+        setName("");
+        setEmail("");
     }
 
   return (
