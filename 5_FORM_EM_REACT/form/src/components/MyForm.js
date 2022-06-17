@@ -5,7 +5,9 @@ const MyForm = ({user}) =>  {
     // 3 - gerenciamento de dados
     const [name, setName] = useState(user ? user.name : '');
     const [email, setEmail] = useState(user ? user.email : '');
-    const [bio, setBio] = useState("");
+    const [bio, setBio] = useState(user ? user.bio : '');
+    const [role, setRole] = useState(user ? user.role : '');
+
     const handleName = (e) => {
         setName(e.target.value)
     }
@@ -14,12 +16,13 @@ const MyForm = ({user}) =>  {
         // preventDefault cancela a ação. Neste caso ela irá impedir o envio do formulário (recarregar a página)
         event.preventDefault();
         console.log("Enviando formulario");
-        console.log(name, email, bio);
+        console.log(name, email, bio, role);
 
         // 7 - limpar form
         setName("");
         setEmail("");
         setBio("");
+        setRole("");
     }
 
   return (
@@ -52,6 +55,15 @@ const MyForm = ({user}) =>  {
            <label>
             <span>Bio:</span>
            <textarea name="bio" placeholder="descrição do usuário" onChange={(e) => setBio(e.target.value)} value={bio}></textarea>
+           </label>
+           {/* 9 - select */}
+           <label>
+            <span>Função do Sistema</span>
+            <select name="role" onChange={(e) => setRole(e.target.value)} value={role}>
+              <option value="user">Usuário</option>
+              <option value="editor">Editor</option>
+              <option value="admin">Administrador</option>
+            </select>
            </label>
            <input type="submit" value="Enviar"/>
         </form>
