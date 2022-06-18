@@ -19,6 +19,16 @@
       "name": "Rapadura",
       "price": "13",
       "id": 4
+    },
+    {
+      "name": "Minecraft",
+      "price": "100",
+      "id": 5
+    },
+    {
+      "name": "Balduco",
+      "price": "2.50",
+      "id": 6
     }
   ]
 }
