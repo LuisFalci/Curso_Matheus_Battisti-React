@@ -39,6 +39,36 @@
       "name": "Miniatura",
       "price": "12.40",
       "id": 8
+    },
+    {
+      "name": "Miniatura",
+      "price": "12.40",
+      "id": 9
+    },
+    {
+      "name": "Miniatura",
+      "price": "12.40",
+      "id": 10
+    },
+    {
+      "name": "Miniatura",
+      "price": "12.40",
+      "id": 11
+    },
+    {
+      "name": "Miniatura",
+      "price": "12.40",
+      "id": 12
+    },
+    {
+      "name": "Minecraft",
+      "price": "123",
+      "id": 13
+    },
+    {
+      "name": "Minecraft",
+      "price": "43",
+      "id": 14
     }
   ]
 }

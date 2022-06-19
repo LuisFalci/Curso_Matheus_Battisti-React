@@ -12,7 +12,7 @@ function App() {
   const [products, setProducts] = useState([]);
   
   // 4 - custom hook (data foi renomeado como items)
-  const { data : items, httpConfig } = useFetch(url);
+  const { data : items, httpConfig, loading } = useFetch(url);
   
 
   const [name, setName] = useState("");
@@ -63,6 +63,8 @@ function App() {
   return (
     <div className="App">
       <h1>Lista de Produtos</h1>
+      {/* 6 - loading */}
+        {loading && <p>Carregando dados...</p>}
       <ul>
         {items && items.map((product) =>(
           <li key={product.id}>
