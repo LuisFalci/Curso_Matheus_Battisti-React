@@ -29,6 +29,16 @@
       "name": "Balduco",
       "price": "2.50",
       "id": 6
+    },
+    {
+      "name": "Mouse",
+      "price": "140",
+      "id": 7
+    },
+    {
+      "name": "Miniatura",
+      "price": "12.40",
+      "id": 8
     }
   ]
 }
