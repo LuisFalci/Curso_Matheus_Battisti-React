@@ -32,6 +32,8 @@ function App() {
           <Route path="/products/:id" element={<Product />} />
           {/* 9 search params */}
           <Route path="/search" element={<Search />} />
+          {/* 10 - redirect */}
+          <Route path="/company" element={<Navigate to="/about" />} />
           {/* 7  - no match route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
