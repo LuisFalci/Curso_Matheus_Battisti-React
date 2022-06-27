@@ -12,7 +12,6 @@ export const useFetch = (url) => {
     const [callFetch, setCallFetch] = useState(null);
     // 6 - loading
     const [loading, setLoading] = useState(false);
-
     // 7 - tratando erros
     const [error, setError] = useState(null);
 
