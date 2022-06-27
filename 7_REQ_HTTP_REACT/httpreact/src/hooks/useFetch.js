@@ -10,7 +10,6 @@ export const useFetch = (url) => {
     const [method, setMethod] = useState(null);
     // sempre que alterarmos os dados, call fetch atualiza os dados
     const [callFetch, setCallFetch] = useState(null);
-
     // 6 - loading
     const [loading, setLoading] = useState(false);
 
