@@ -14,7 +14,6 @@ export const useFetch = (url) => {
     const [loading, setLoading] = useState(false);
     // 7 - tratando erros
     const [error, setError] = useState(null);
-
     const httpConfig = (data, method) => {
         if(method === "POST"){
             setConfig({
