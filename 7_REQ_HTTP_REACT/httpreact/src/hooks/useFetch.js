@@ -27,7 +27,7 @@ export const useFetch = (url) => {
             setMethod(method);
         }
     }
-  
+    
     useEffect(() => {
         const fetchData = async () => {
 
