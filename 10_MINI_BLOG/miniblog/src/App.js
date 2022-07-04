@@ -2,7 +2,10 @@
 import "./App.css";
 
 // REACT
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// mapeia se a autentificação do usuário teve êxito
+import { onAuthStateChanged } from "firebase/auth";
 
 // CONTEXT
 import { AuthProvider } from "./context/AuthContext";
@@ -16,11 +19,29 @@ import Login from "./pages/Login/Login";
 // COMPONENTS
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { useEffect, useState } from "react";
+import { useAuthentication } from "./hooks/useAuthentication";
 
 function App() {
+
+  const [user, setUser] = useState(undefined);
+  const { auth } = useAuthentication();
+
+  const loadingUser = user === undefined;
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+  }, [auth]);
+
+  if (loadingUser) {
+    return <p>Carregando...</p>;
+  }
+
   return (
     <div className="App">
-      <AuthProvider>
+      <AuthProvider value={{ user }}>
         <BrowserRouter>
           <Navbar />
           <Routes>
