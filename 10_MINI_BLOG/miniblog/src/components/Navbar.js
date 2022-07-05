@@ -7,7 +7,10 @@ import { useAuthValue } from "../context/AuthContext";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
+  // importa usuário via nosso hook
   const { user } = useAuthValue();
+  // função de deslogar do nosso hook
+  const { logout } = useAuthentication();
 
   return (
     <nav className={styles.navbar}>
@@ -76,6 +79,12 @@ const Navbar = () => {
             Sobre
           </NavLink>
         </li>
+        {/* Se usuário estiver autenticado (logado), ele terá a opção de deslogar */}
+        {user && (
+          <li>
+            <button onClick={logout}>Sair</button>
+          </li>
+        )}
       </ul>
     </nav>
   );
