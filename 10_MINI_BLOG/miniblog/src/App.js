@@ -21,6 +21,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 import { useAuthentication } from "./hooks/useAuthentication";
+import CreatePost from "./pages/CreatePost/CreatePost";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
 
@@ -49,6 +51,9 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/posts/create" element={<CreatePost />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
           <Footer />
         </BrowserRouter>
