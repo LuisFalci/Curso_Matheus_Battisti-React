@@ -8,7 +8,7 @@ import { useState } from "react";
 // components
 
 const Home = () => {
-  const [querry, setQuerry] = useState("");
+  const [query, setQuery] = useState("");
   const [posts] = useState([]);
 
   const handleSubmit = (e) => {
@@ -22,7 +22,7 @@ const Home = () => {
         <input
           type="text"
           placeholder="Ou busque por tags..."
-          onChange={(e) => setQuerry(e.target.value)}
+          onChange={(e) => setQuery(e.target.value)}
         />
         <button className="btn btn-dark">Pesquisar</button>
       </form>
