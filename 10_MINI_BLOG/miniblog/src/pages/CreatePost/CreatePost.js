@@ -22,14 +22,33 @@ function CreatePost() {
     e.preventDefault();
     setFormError("");
 
+    // validate image URL
+    try {
+      new URL(image);
+    } catch (error) {
+      setFormError("A imagem precisa de uma URL");
+    }
+    // criar o array de tags
+    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
+
+    // checar todos os valores
+    if(!title || !image || !tags || !body){
+      setFormError("Por favor, preencha todos os campos!")
+    }
+
+    if(formError) return;  
+
     insertDocument({
       title,
       image,
       body,
-      tags,
+      tagsArray,
       uid: user.uid,
       createdBy: user.displayName,
     });
+
+    // redirect to home page
+    navigate("/")
   };
 
   return (
@@ -83,12 +102,13 @@ function CreatePost() {
         {!response.loading && <button className="btn">Criar post!</button>}
         {response.loading && (
           <button className="btn" disabled>
-            Aguarde.. .
+            Aguarde...
           </button>
         )}
         {(response.error || formError) && (
           <p className="error">{response.error || formError}</p>
         )}
+        
       </form>
     </div>
   );
