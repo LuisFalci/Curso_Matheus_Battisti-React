@@ -21,7 +21,7 @@ const HookUseReducer = () => {
         };
 
         setTaskText("");
-
+        // O operador Spread (...) é um recurso que permite acessar o conteúdo de um objeto iterável. Objeto iterável é um objeto, ou estrutura de dados, que permite acessar seu conteúdo com for … of loop
         return [...state, newTask];
 
       case "REMOVE":
