@@ -25,6 +25,19 @@ const HookUseEffect = () => {
     console.log("Sou executado apenas quando anotherNumber muda!");
   }, [anotherNumber]);
 
+    // 4 - limpeza do useEffect
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        console.log("Hello World!");
+  
+        // gera erro sem cleanup
+        //setAnotherNumber(anotherNumber + 1);
+      }, 2000);
+  
+      // realizar exemplo sem clean up
+      return () => clearTimeout(timer);
+    }, [anotherNumber]);
+
   return (
     <div>
       <h2>useEffect</h2>
