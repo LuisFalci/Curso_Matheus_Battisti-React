@@ -8,10 +8,22 @@ const HookUseRef = () => {
   const [counter, setCounter] = useState(0);
   const [counterB, setCounterB] = useState(0);
 
-//   Neste use effect, com o useState, haveria um loop infinito. Já com o useRef isso não ocorre
+  //   Neste use effect, com o useState, haveria um loop infinito. Já com o useRef isso não ocorre
   useEffect(() => {
     numberRef.current = numberRef.current + 1;
   });
+
+  //  2 - useRef e dom
+  const inputRef = useRef();
+  const [text, setText] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setText("");
+
+    inputRef.current.focus();
+  };
 
   return (
     <div>
@@ -22,6 +34,18 @@ const HookUseRef = () => {
       <button onClick={() => setCounter(counter + 1)}>Contador A</button>
       <p>Counter 2: {counterB}</p>
       <button onClick={() => setCounterB(counterB + 1)}>Contador B</button>
+
+      {/* 2 - useRef e DOM */}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          ref={inputRef}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+        <input type="submit" value="Enviar" />
+      </form>
+      <hr />
     </div>
   );
 };
